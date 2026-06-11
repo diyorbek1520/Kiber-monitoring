@@ -1,0 +1,41 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - kiber_net
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - server/.env.production
+    depends_on:
+      - mongo
+    networks:
+      - kiber_net
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        VITE_API_URL: /api
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    networks:
+      - kiber_net
+
+volumes:
+  mongo_data:
+
+networks:
+  kiber_net:
+    driver: bridge
