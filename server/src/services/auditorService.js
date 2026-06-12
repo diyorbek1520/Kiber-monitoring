@@ -1,5 +1,5 @@
-// Target util foydalanuvchi kiritgan domen yoki URLni tekshiruvga tayyorlash uchun ishlatiladi.
-import { normalizeTarget } from '../utils/target.js';
+// Target util foydalanuvchi kiritgan domen yoki URLni tekshiruvga tayyorlash va DNSda tekshirish uchun ishlatiladi.
+import { normalizeTarget, resolveHost } from '../utils/target.js';
 
 // Score util audit natijalaridan umumiy xavfsizlik balli va reytingini hisoblaydi.
 import { calculateSecurityScore, getRating } from '../utils/score.js';
@@ -16,6 +16,15 @@ import { analyzeAuditWithAI } from '../ai/auditorAI.js';
 
 export async function runAudit(input) {
   const target = normalizeTarget(input);
+  const resolvedAddresses = await resolveHost(target.host);
+
+  if (resolvedAddresses !== null && !resolvedAddresses.length) {
+    const error = new Error('Domen DNS orqali topilmadi');
+    error.status = 404;
+    error.publicMessage = 'Bunday domen nomi topilmadi';
+    throw error;
+  }
+
   const [ssl, headerResult, dns, email, ports] = await Promise.all([
     scanSSL(target.host),
     scanHeaders(target.url),

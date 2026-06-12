@@ -41,9 +41,12 @@ export function normalizeTarget(value) {
 
 export async function resolveHost(host) {
   if (net.isIP(host)) return [host];
+
   try {
-    return await dns.resolve4(host);
-  } catch {
-    return [];
+    const addresses = await dns.lookup(host, { all: true });
+    return addresses.map((item) => item.address);
+  } catch (error) {
+    if (['ENOTFOUND', 'ENODATA'].includes(error.code)) return [];
+    return null;
   }
 }
