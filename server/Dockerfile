@@ -12,5 +12,6 @@ COPY --from=deps /app/node_modules /app/node_modules
 COPY --from=deps /app/server/node_modules ./node_modules
 COPY server/package*.json ./
 COPY server/src ./src
+RUN mkdir -p /app/server/data
 EXPOSE 5000
 CMD ["node", "src/index.js"]

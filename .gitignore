@@ -4,6 +4,4 @@ dist
 .env.local
 server/.env.production
 *.log
-.mongo-data
-.mongo-binaries
 .test-*.json

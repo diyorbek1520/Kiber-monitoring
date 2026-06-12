@@ -1,0 +1,478 @@
+{
+  "users": [
+    {
+      "_id": "69fbd050-ace3-4888-b919-1b358036efea",
+      "ism": "Diyorbek Akramjonov",
+      "email": "akramjonovdiyorbek51@gmail.com",
+      "parolHash": "$2b$12$jM.bWqB9geT4w9MzQVJxsO/FLLhdncxmspUu0EBI5j0LvZl2QXhNW",
+      "tashkilot": "FDTU",
+      "telefon": "+998917384420",
+      "createdAt": "2026-06-12T13:26:28.970Z",
+      "updatedAt": "2026-06-12T13:26:28.970Z"
+    }
+  ],
+  "analyses": [
+    {
+      "_id": "ed74323b-c523-49a2-a08d-69659b12a7b3",
+      "userId": "69fbd050-ace3-4888-b919-1b358036efea",
+      "turi": "auditor",
+      "kirish": {
+        "manzil": "https://www.facebook.com/"
+      },
+      "natija": {
+        "manzil": {
+          "raw": "https://www.facebook.com/",
+          "host": "www.facebook.com",
+          "url": "https://www.facebook.com/",
+          "isIp": false
+        },
+        "ssl": {
+          "mavjud": true,
+          "amalQilishMuddati": "2026-06-19T23:59:59.000Z",
+          "muddatiTugagan": false,
+          "beruvchi": "DigiCert Inc",
+          "mavzu": "*.facebook.com"
+        },
+        "https": {
+          "ishlayapti": true,
+          "hsts": true
+        },
+        "headers": [
+          {
+            "nomi": "Content-Security-Policy",
+            "mavjud": true,
+            "qiymat": "default-src blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net *.facebook.net *.whatsapp.com *.whatsapp.net;script-src *.facebook.com *.fbcdn.net *.facebook.net 127.0.0.1:* 'nonce-6EROQLZy' blob: 'self' connect.facebook.net 'unsafe-eval' https://accounts.google.com https://*.google-analytics.com *.google.com;style-src *.fbcdn.net data: *.facebook.com 'unsafe-inline' https://accounts.google.com https://fonts.googleapis.com;connect-src *.facebook.com facebook.com *.fbcdn.net *.facebook.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com ws://localhost:* blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.fb.com *.instagram.com https://accounts.google.com https://*.google-analytics.com;font-src data: *.facebook.com *.fbcdn.net *.fbsbx.com https://fonts.gstatic.com;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net connect.facebook.net blob: android-webview-video-poster: *.whatsapp.net *.fb.com *.oculuscdn.com *.tenor.co *.tenor.com *.giphy.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.google-analytics.com;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com data: *.tenor.co *.tenor.com https://*.giphy.com;child-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;frame-src *.facebook.com *.fbsbx.com fbsbx.com data: www.instagram.com *.fbcdn.net accounts.meta.com *.accounts.meta.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://td.doubleclick.net *.google.com *.doubleclick.net;manifest-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;object-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;worker-src blob: *.facebook.com data:;block-all-mixed-content;upgrade-insecure-requests;"
+          },
+          {
+            "nomi": "X-Frame-Options",
+            "mavjud": true,
+            "qiymat": "DENY"
+          },
+          {
+            "nomi": "Strict-Transport-Security",
+            "mavjud": true,
+            "qiymat": "max-age=15552000; preload"
+          },
+          {
+            "nomi": "X-Content-Type-Options",
+            "mavjud": true,
+            "qiymat": "nosniff"
+          },
+          {
+            "nomi": "Referrer-Policy",
+            "mavjud": false,
+            "qiymat": null
+          }
+        ],
+        "email": {
+          "spf": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dmarc": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dkim": {
+            "ehtimoliyMavjud": false,
+            "topilganSelectorlar": []
+          }
+        },
+        "ports": [
+          {
+            "port": 21,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 22,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 23,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 25,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 53,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 80,
+            "ochiq": true,
+            "xizmat": "http",
+            "izoh": null
+          },
+          {
+            "port": 110,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 143,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 443,
+            "ochiq": true,
+            "xizmat": "https",
+            "izoh": null
+          },
+          {
+            "port": 3306,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 5432,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 27017,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          }
+        ],
+        "dns": {
+          "a": [],
+          "mx": [],
+          "ns": []
+        },
+        "ball": 80,
+        "baho": "Yaxshi",
+        "aiTahlil": "### Muammo 1: Elektron pochta autentifikatsiyasi yozuvlarining yo‘qligi (SPF, DMARC, DKIM)\n\n**Muammo tavsifi:**  \nTekshiruv natijalarida domen uchun SPF, DMARC va DKIM yozuvlari mavjud emas yoki aniqlanmagan. Bu yozuvlar elektron pochta xabarlarining haqiqiyligini tasdiqlash va soxtalashtirishdan himoya qilish uchun zarur.\n\n**Xavf darajasi:** O‘rta daraja\n\n**Oqibatlari:**  \n- Elektron pochta soxtalashtirish (spoofing) xavfi oshadi.  \n- Foydalanuvchilarga yuborilayotgan xabarlar firibgarlar tomonidan yuborilgan xabar sifatida ko‘rinishi mumkin.  \n- Domenning obro‘si pasayishi va pochta xabarlarining spamga tushish ehtimoli ortadi.\n\n**Batafsil yechim:**  \n- SPF yozuvini domen DNS-ga qo‘shish. Bu yozuv domeningizdan yuborilayotgan xabarlar uchun ruxsat etilgan pochta serverlarini belgilaydi.  \n- DMARC yozuvini qo‘shish, bu orqali siz pochta qabul qiluvchilarga qanday choralar ko‘rishni ko‘rsatishingiz mumkin (masalan, soxtalashtirilgan xabarlarni rad etish yoki karantinga olish).  \n- DKIM imzolarini sozlash, bu xabarlarning o‘zgartirilmaganligini ta’minlaydi.\n\n**Amalga oshirish bosqichlari:**  \n1. Domen DNS boshqaruv paneliga kirish.  \n2. SPF yozuvini yaratish va qo‘shish (masalan, `v=spf1 include:_spf.google.com ~all`).  \n3. DMARC yozuvini yaratish va qo‘shish (masalan, `v=DMARC1; p=quarantine; rua=mailto:admin@domain.com`).  \n4. DKIM kalitlarini yaratish va domen DNS-ga qo‘shish.  \n5. Elektron pochta serveringizda DKIM imzolarini yoqish.  \n6. Yozuvlarning to‘g‘ri ishlashini tekshirish uchun onlayn vositalardan foydalanish.  \n7. Zaruratga qarab DMARC siyosatini qattiqroq (reject) qilish.\n\n---\n\n### Muammo 2: HTTP porti (80) ochiq va HTTPS ga avtomatik yo‘naltirish yo‘qligi\n\n**Muammo tavsifi:**  \nPort 80 (HTTP) ochiq va xizmat ko‘rsatmoqda, lekin tekshiruvda avtomatik HTTPS ga yo‘naltirish haqida ma’lumot yo‘q.\n\n**Xavf darajasi:** O‘rta daraja\n\n**Oqibatlari:**  \n- Foydalanuvchilar noto‘g‘ri URL orqali HTTP ga ulanib, ma’lumotlar shifrlanmagan holda uzatilishi mumkin.  \n- Man-in-the-middle (MITM) hujumlari uchun imkoniyat paydo bo‘ladi.  \n- Sayt xavfsizligi va ishonchliligi pasayadi.\n\n**Batafsil yechim:**  \n- HTTP so‘rovlarini avtomatik ravishda HTTPS ga yo‘naltirishni sozlash.  \n- HSTS (Strict-Transport-Security) allaqachon yoqilgan, bu yaxshi, lekin yo‘naltirish ham zarur.\n\n**Amalga oshirish bosqichlari:**  \n1. Veb-server konfiguratsiyasida (Apache, Nginx va boshqalar) HTTP so‘rovlarini 301 yoki 302 kodi bilan HTTPS ga yo‘naltirishni sozlash.  \n2. Yo‘naltirishning to‘g‘ri ishlashini tekshirish.  \n3. HSTS yozuvining mavjudligini va to‘g‘ri sozlanganligini tasdiqlash.\n\n---\n\n### Muammo 3: Referrer-Policy sarlavhasining yo‘qligi\n\n**Muammo tavsifi:**  \nHTTP javob sarlavhalari orasida Referrer-Policy mavjud emas.\n\n**Xavf darajasi:** Past daraja\n\n**Oqibatlari:**  \n- Foydalanuvchi brauzeridan yuborilayotgan referer ma’lumotlari nazorat qilinmaydi.  \n- Bu ba’zan maxfiy ma’lumotlarning uchinchi tomonlarga oshkor bo‘lishiga olib kelishi mumkin.\n\n**Batafsil yechim:**  \n- Referrer-Policy sarlavhasini qo‘shish orqali referer ma’lumotlarini boshqarish. Masalan, `no-referrer`, `same-origin` yoki `strict-origin-when-cross-origin`.\n\n**Amalga oshirish bosqichlari:**  \n1. Veb-server konfiguratsiyasiga Referrer-Policy sarlavhasini qo‘shish.  \n2. Kerakli siyosatni tanlash va sozlash.  \n3. Brauzerlarda sarlavhaning ishlashini tekshirish.\n\n---\n\n### Umumiy tavsiyalar:\n\n- SSL sertifikatining amal qilish muddati yaxshi va beruvchi ishonchli (DigiCert Inc). Bu yaxshi holat.  \n- X-Frame-Options: DENY sarlavhasi mavjud, bu clickjacking hujumlariga qarshi yaxshi himoya.  \n- Content-Security-Policy sarlavhasi keng va puxta sozlangan, bu saytni ko‘plab turdagi hujumlardan himoya qiladi.  \n- X-Content-Type-Options: nosniff sarlavhasi mavjud, bu ham yaxshi amaliyot.  \n- DNS yozuvlari (A, MX, NS) bo‘sh, bu kichik biznes uchun muammo bo‘lishi mumkin, ayniqsa pochta va domen ishlashi uchun. DNS yozuvlarini to‘ldirish zarur.\n\n---\n\n### Yakuniy baho:  \nSaytning umumiy xavfsizlik holati yaxshi (ball: 80), ammo elektron pochta autentifikatsiyasi va HTTP dan HTTPS ga yo‘naltirish kabi muhim jihatlar yaxshilanishi kerak. Bu kichik biznes uchun ham muhim, chunki elektron pochta va veb-sayt xavfsizligi mijozlar ishonchini saqlashda muhim rol o‘ynaydi."
+      },
+      "ball": 80,
+      "xavfDarajasi": "Yaxshi",
+      "createdAt": "2026-06-12T13:27:37.882Z",
+      "updatedAt": "2026-06-12T13:27:37.882Z"
+    },
+    {
+      "_id": "c32a5046-0e53-49bb-92ca-a450d114086e",
+      "userId": "69fbd050-ace3-4888-b919-1b358036efea",
+      "turi": "auditor",
+      "kirish": {
+        "manzil": "https://www.facebook.uz"
+      },
+      "natija": {
+        "manzil": {
+          "raw": "https://www.facebook.uz",
+          "host": "www.facebook.uz",
+          "url": "https://www.facebook.uz/",
+          "isIp": false
+        },
+        "ssl": {
+          "mavjud": false,
+          "amalQilishMuddati": null,
+          "muddatiTugagan": true,
+          "beruvchi": null,
+          "mavzu": "www.facebook.uz"
+        },
+        "https": {
+          "ishlayapti": false,
+          "hsts": false
+        },
+        "headers": [
+          {
+            "nomi": "Content-Security-Policy",
+            "mavjud": false,
+            "qiymat": null
+          },
+          {
+            "nomi": "X-Frame-Options",
+            "mavjud": false,
+            "qiymat": null
+          },
+          {
+            "nomi": "Strict-Transport-Security",
+            "mavjud": false,
+            "qiymat": null
+          },
+          {
+            "nomi": "X-Content-Type-Options",
+            "mavjud": false,
+            "qiymat": null
+          },
+          {
+            "nomi": "Referrer-Policy",
+            "mavjud": false,
+            "qiymat": null
+          }
+        ],
+        "email": {
+          "spf": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dmarc": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dkim": {
+            "ehtimoliyMavjud": false,
+            "topilganSelectorlar": []
+          }
+        },
+        "ports": [
+          {
+            "port": 21,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 22,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 23,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 25,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 53,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 80,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 110,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 143,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 443,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 3306,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 5432,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 27017,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          }
+        ],
+        "dns": {
+          "a": [],
+          "mx": [],
+          "ns": []
+        },
+        "ball": 0,
+        "baho": "Juda xavfli",
+        "aiTahlil": "### Muammo 1: Sayt uchun SSL sertifikati yo‘q yoki muddati tugagan\n- **Tavsif:** Sayt https://www.facebook.uz uchun SSL sertifikati mavjud emas va HTTPS ishlamayapti.\n- **Xavf darajasi:** Juda yuqori\n- **Oqibatlari:** Ma'lumotlar shifrlanmagan holda uzatiladi, foydalanuvchilar va sayt o‘rtasidagi aloqa xavfsiz emas. Bu osonlik bilan ma'lumotlarni o‘g‘irlash, \"man-in-the-middle\" hujumlari va saytga ishonchsizlikka olib keladi.\n- **Yechim:** Amal qiluvchi, ishonchli sertifikatni o‘rnatish (masalan, Let's Encrypt yoki boshqa sertifikat beruvchi tashkilotlardan).\n- **Amalga oshirish bosqichlari:**\n  1. Sertifikat beruvchi tashkilotni tanlash.\n  2. Sayt domeni uchun sertifikat olish.\n  3. Sertifikatni web-serverga o‘rnatish.\n  4. HTTPS protokolini yoqish va barcha HTTP so‘rovlarni HTTPS ga yo‘naltirish.\n  5. Sertifikat amal qilish muddatini doimiy nazorat qilish va yangilab borish.\n\n---\n\n### Muammo 2: HTTPS va HSTS yoqilmagan\n- **Tavsif:** HTTPS ishlamayapti, Strict-Transport-Security (HSTS) sarlavhasi yo‘q.\n- **Xavf darajasi:** Yuqori\n- **Oqibatlari:** HTTPS yo‘qligi sababli trafik shifrlanmaydi, HSTS yo‘qligi esa foydalanuvchilarni avtomatik ravishda HTTPS ga yo‘naltirish imkoniyatini yo‘qotadi, bu esa saytga hujum qilish imkoniyatini oshiradi.\n- **Yechim:** HTTPS ni to‘liq yoqish va HSTS sarlavhasini sozlash.\n- **Amalga oshirish bosqichlari:**\n  1. Web-server konfiguratsiyasida HTTPS ni faollashtirish.\n  2. HSTS sarlavhasini qo‘shish (masalan, `Strict-Transport-Security: max-age=31536000; includeSubDomains`).\n  3. Saytga kirishda barcha so‘rovlarni HTTPS ga yo‘naltirishni ta'minlash.\n\n---\n\n### Muammo 3: Muhim xavfsizlik sarlavhalari yo‘q\n- **Tavsif:** Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy kabi xavfsizlik sarlavhalari mavjud emas.\n- **Xavf darajasi:** O‘rta yuqori\n- **Oqibatlari:** Saytni Clickjacking, XSS (Cross-Site Scripting), MIME-type hujumlari va ma'lumotlarning noto‘g‘ri oshkor bo‘lishi xavfi ortadi.\n- **Yechim:** Ushbu xavfsizlik sarlavhalarini web-serverga qo‘shish.\n- **Amalga oshirish bosqichlari:**\n  1. Content-Security-Policy (CSP) sarlavhasini yaratish va qo‘shish.\n  2. X-Frame-Options sarlavhasini qo‘shish (masalan, `DENY` yoki `SAMEORIGIN`).\n  3. X-Content-Type-Options sarlavhasini qo‘shish (`nosniff` qiymati bilan).\n  4. Referrer-Policy sarlavhasini sozlash (masalan, `no-referrer` yoki `strict-origin`).\n\n---\n\n### Muammo 4: Elektron pochta uchun SPF, DMARC va DKIM yozuvlari yo‘q\n- **Tavsif:** Domen uchun SPF, DMARC va DKIM yozuvlari mavjud emas.\n- **Xavf darajasi:** Yuqori\n- **Oqibatlari:** Domen nomidan soxta elektron pochta xabarlarini yuborish osonlashadi, bu esa phishing va spam hujumlariga olib keladi.\n- **Yechim:** SPF, DMARC va DKIM yozuvlarini DNS ga qo‘shish.\n- **Amalga oshirish bosqichlari:**\n  1. SPF yozuvini yaratish va DNS ga qo‘shish.\n  2. DKIM kalitlarini yaratish va DNS ga qo‘shish.\n  3. DMARC siyosatini yaratish va DNS ga qo‘shish.\n  4. Elektron pochta tizimini ushbu yozuvlarga moslashtirish va sinovdan o‘tkazish.\n\n---\n\n### Muammo 5: DNS yozuvlari va portlar yopiq yoki mavjud emas\n- **Tavsif:** Domen uchun A, MX, NS yozuvlari mavjud emas; asosiy portlar (80, 443) yopiq.\n- **Xavf darajasi:** Juda yuqori\n- **Oqibatlari:** Sayt va pochta xizmatlari ishlamaydi yoki noto‘g‘ri sozlangan. Bu biznes faoliyatining to‘xtashiga olib keladi.\n- **Yechim:** DNS yozuvlarini to‘g‘ri sozlash va kerakli portlarni ochish.\n- **Amalga oshirish bosqichlari:**\n  1. Domen uchun A yozuvlarini to‘g‘ri IP manzillar bilan yaratish.\n  2. MX yozuvlarini pochta serverlari uchun sozlash.\n  3. NS yozuvlarini domenni boshqaruvchi serverlarga yo‘naltirish.\n  4. Web-server va boshqa xizmatlar uchun kerakli portlarni tarmoqda ochish.\n  5. Portlar va DNS sozlamalarini sinovdan o‘tkazish.\n\n---\n\n### Umumiy tavsiya:\nUshbu sayt juda xavfli holatda, darhol yuqoridagi yechimlarni amalga oshirish zarur. Aks holda, sayt foydalanuvchilari va biznes uchun jiddiy xavf tug‘diradi. Kiberxavfsizlikni ta'minlash uchun muntazam monitoring va yangilanishlarni amalga oshirishni tavsiya qilaman."
+      },
+      "ball": 0,
+      "xavfDarajasi": "Juda xavfli",
+      "createdAt": "2026-06-12T13:29:21.444Z",
+      "updatedAt": "2026-06-12T13:29:21.444Z"
+    },
+    {
+      "_id": "14d4fea6-5300-452d-b4d7-0af25196dac0",
+      "userId": "69fbd050-ace3-4888-b919-1b358036efea",
+      "turi": "auditor",
+      "kirish": {
+        "manzil": "https://www.facebook.com/"
+      },
+      "natija": {
+        "manzil": {
+          "raw": "https://www.facebook.com/",
+          "host": "www.facebook.com",
+          "url": "https://www.facebook.com/",
+          "isIp": false
+        },
+        "ssl": {
+          "mavjud": true,
+          "amalQilishMuddati": "2026-06-19T23:59:59.000Z",
+          "muddatiTugagan": false,
+          "beruvchi": "DigiCert Inc",
+          "mavzu": "*.facebook.com"
+        },
+        "https": {
+          "ishlayapti": true,
+          "hsts": true
+        },
+        "headers": [
+          {
+            "nomi": "Content-Security-Policy",
+            "mavjud": true,
+            "qiymat": "default-src blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net *.facebook.net *.whatsapp.com *.whatsapp.net;script-src *.facebook.com *.fbcdn.net *.facebook.net 127.0.0.1:* 'nonce-PF9oRFGh' blob: 'self' connect.facebook.net 'unsafe-eval' https://accounts.google.com https://*.google-analytics.com *.google.com;style-src *.fbcdn.net data: *.facebook.com 'unsafe-inline' https://accounts.google.com https://fonts.googleapis.com;connect-src *.facebook.com facebook.com *.fbcdn.net *.facebook.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com ws://localhost:* blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.fb.com *.instagram.com https://accounts.google.com https://*.google-analytics.com;font-src data: *.facebook.com *.fbcdn.net *.fbsbx.com https://fonts.gstatic.com;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net connect.facebook.net blob: android-webview-video-poster: *.whatsapp.net *.fb.com *.oculuscdn.com *.tenor.co *.tenor.com *.giphy.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.google-analytics.com;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com data: *.tenor.co *.tenor.com https://*.giphy.com;child-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;frame-src *.facebook.com *.fbsbx.com fbsbx.com data: www.instagram.com *.fbcdn.net accounts.meta.com *.accounts.meta.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://td.doubleclick.net *.google.com *.doubleclick.net;manifest-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;object-src data: blob: 'self' https://*.fbsbx.com *.facebook.com *.fbcdn.net;worker-src blob: *.facebook.com data:;block-all-mixed-content;upgrade-insecure-requests;"
+          },
+          {
+            "nomi": "X-Frame-Options",
+            "mavjud": true,
+            "qiymat": "DENY"
+          },
+          {
+            "nomi": "Strict-Transport-Security",
+            "mavjud": true,
+            "qiymat": "max-age=15552000; preload"
+          },
+          {
+            "nomi": "X-Content-Type-Options",
+            "mavjud": true,
+            "qiymat": "nosniff"
+          },
+          {
+            "nomi": "Referrer-Policy",
+            "mavjud": false,
+            "qiymat": null
+          }
+        ],
+        "email": {
+          "spf": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dmarc": {
+            "mavjud": false,
+            "yozuvlar": []
+          },
+          "dkim": {
+            "ehtimoliyMavjud": false,
+            "topilganSelectorlar": []
+          }
+        },
+        "ports": [
+          {
+            "port": 21,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 22,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 23,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 25,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 53,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 80,
+            "ochiq": true,
+            "xizmat": "http",
+            "izoh": null
+          },
+          {
+            "port": 110,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 143,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 443,
+            "ochiq": true,
+            "xizmat": "https",
+            "izoh": null
+          },
+          {
+            "port": 3306,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 5432,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          },
+          {
+            "port": 27017,
+            "ochiq": false,
+            "xizmat": null,
+            "izoh": null
+          }
+        ],
+        "dns": {
+          "a": [],
+          "mx": [],
+          "ns": []
+        },
+        "ball": 80,
+        "baho": "Yaxshi",
+        "aiTahlil": "Quyidagi tahlil kichik biznesingiz uchun kiberxavfsizlik auditorining fikrlarini o‘z ichiga oladi:\n\n---\n\n### 1. Muammo: Elektron pochta autentifikatsiyasi yozuvlarining yo‘qligi (SPF, DMARC, DKIM)\n\n- **Muammo tavsifi:** Tekshiruvda SPF, DMARC va DKIM yozuvlari mavjud emas yoki aniqlanmagan. Bu elektron pochta xabarlarining haqiqiyligini tasdiqlash uchun zarur bo‘lgan standartlar hisoblanadi.\n- **Xavf darajasi:** Yuqori\n- **Oqibatlari:** Spam, phishing va soxtalashtirilgan elektron pochta xabarlarini oldini olish qiyinlashadi. Bu esa mijozlar va hamkorlar orasida ishonchni kamaytirishi mumkin.\n- **Batafsil yechim:** \n  - Domeningiz uchun SPF yozuvini yaratish va DNSga kiritish.\n  - DMARC siyosatini sozlash, bu orqali pochta qabul qiluvchilarga qanday harakat qilishni ko‘rsatish (masalan, rad etish yoki karantinlash).\n  - DKIM kalitlarini yaratish va pochta serveringizda sozlash.\n- **Amalga oshirish bosqichlari:**\n  1. Domeningizni boshqarayotgan DNS provayderiga kirib, SPF yozuvini qo‘shing (masalan, `v=spf1 include:_spf.google.com ~all`).\n  2. DMARC siyosatini yarating va DNSga qo‘shing (masalan, `v=DMARC1; p=quarantine; rua=mailto:admin@domain.uz`).\n  3. Pochta serveringizda DKIM kalitlarini sozlang va DNSga publika kalitini joylashtiring.\n  4. Sozlamalarni tekshirish uchun onlayn vositalardan foydalaning.\n  5. Muntazam ravishda elektron pochta autentifikatsiyasi holatini monitoring qiling.\n\n---\n\n### 2. Muammo: HTTP porti (80) ochiq va HTTPSga yo‘naltirish yo‘qligi\n\n- **Muammo tavsifi:** 80-port (HTTP) ochiq, lekin tekshiruvda uning HTTPSga yo‘naltirilishi haqida ma’lumot yo‘q.\n- **Xavf darajasi:** O‘rta\n- **Oqibatlari:** HTTP orqali yuborilgan ma’lumotlar shifrlanmagan bo‘lib, osonlik bilan o‘g‘irlanishi yoki o‘zgartirilishi mumkin. Bu foydalanuvchilar ma’lumotlarining xavfsizligiga tahdid soladi.\n- **Batafsil yechim:** \n  - HTTP so‘rovlarini avtomatik tarzda HTTPSga yo‘naltirishni amalga oshirish.\n  - Server konfiguratsiyasida 80-portga kelgan so‘rovlarni 443-portga yo‘naltirish qoidasini qo‘shish.\n- **Amalga oshirish bosqichlari:**\n  1. Veb-server (Apache, Nginx va boshqalar) konfiguratsiyasini tahrirlash.\n  2. 80-portga kelgan barcha so‘rovlarni 301 yoki 302 yo‘naltirish bilan HTTPSga o‘tkazish.\n  3. O‘zgartirishlarni sinovdan o‘tkazish.\n  4. O‘rnatilgan yo‘naltirishning to‘g‘ri ishlashini muntazam tekshirish.\n\n---\n\n### 3. Muammo: Referrer-Policy headerining yo‘qligi\n\n- **Muammo tavsifi:** Referrer-Policy sarlavhasi mavjud emas.\n- **Xavf darajasi:** Past\n- **Oqibatlari:** Foydalanuvchilar tashrif buyurgan sahifalar haqida ma’lumotlar (referer) boshqa saytlarga yuborilishi mumkin, bu esa maxfiylikka ta’sir qilishi mumkin.\n- **Batafsil yechim:** \n  - Referrer-Policy sarlavhasini qo‘shish, masalan, `no-referrer-when-downgrade` yoki `strict-origin-when-cross-origin`.\n- **Amalga oshirish bosqichlari:**\n  1. Veb-server konfiguratsiyasiga Referrer-Policy headerini qo‘shish.\n  2. Sayt xavfsizligini oshirish uchun ma’qul siyosatni tanlash.\n  3. O‘zgartirishlarni sinovdan o‘tkazish.\n\n---\n\n### 4. Muammo: DNS yozuvlarining bo‘shligi (A, MX, NS yozuvlari yo‘q)\n\n- **Muammo tavsifi:** DNS yozuvlari bo‘sh, ya’ni asosiy domen uchun A, MX va NS yozuvlari aniqlanmagan.\n- **Xavf darajasi:** Yuqori\n- **Oqibatlari:** Domen ishlashida muammolar yuzaga kelishi mumkin, masalan, pochta xizmati ishlamasligi, domen nomining noto‘g‘ri ishlashi.\n- **Batafsil yechim:** \n  - Domen uchun to‘g‘ri DNS yozuvlarini yaratish va sozlash.\n  - MX yozuvlari orqali pochta serverlarini aniqlash.\n  - NS yozuvlari orqali domenni boshqaruvchi serverlarni belgilash.\n- **Amalga oshirish bosqichlari:**\n  1. Domenni ro‘yxatdan o‘tkazgan provayder yoki DNS boshqaruv paneliga kirish.\n  2. Zarur DNS yozuvlarini qo‘shish (A, MX, NS).\n  3. O‘zgartirishlarni saqlash va tarqalishini kutish.\n  4. DNS yozuvlarini tekshirish uchun onlayn vositalardan foydalanish.\n\n---\n\n### 5. Umumiy xavfsizlik holati\n\n- SSL sertifikati mavjud, amal qilish muddati uzoq (2026 yilgacha), bu yaxshi.\n- HTTPS va HSTS yoqilgan, bu sayt trafikini shifrlash va xavfsizligini oshiradi.\n- Content-Security-Policy, X-Frame-Options, X-Content-Type-Options kabi xavfsizlik sarlavhalari mavjud va to‘g‘ri sozlangan.\n- Portlar bo‘yicha faqat kerakli portlar (80, 443) ochiq, boshqa xavfsiz portlar yopiq, bu yaxshi amaliyot.\n\n---\n\n### Yakuniy tavsiyalar:\n\n- Elektron pochta autentifikatsiyasi (SPF, DMARC, DKIM) yozuvlarini darhol joriy qiling.\n- HTTP trafikni HTTPSga yo‘naltirishni ta’minlang.\n- Referrer-Policy sarlavhasini qo‘shing.\n- Domen DNS yozuvlarini to‘liq va to‘g‘ri sozlang.\n- Muntazam ravishda xavfsizlik tekshiruvlarini o‘tkazing va yangilanishlarni kuzatib boring.\n\n---\n\nAgar ushbu tavsiyalarni amalga oshirsangiz, kichik biznesingizning onlayn xavfsizligi sezilarli darajada oshadi va mijozlaringiz ishonchini mustahkamlaysiz."
+      },
+      "ball": 80,
+      "xavfDarajasi": "Yaxshi",
+      "createdAt": "2026-06-12T13:36:35.105Z",
+      "updatedAt": "2026-06-12T13:36:35.105Z"
+    }
+  ]
+}

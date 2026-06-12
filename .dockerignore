@@ -6,6 +6,4 @@ client/dist
 .env
 server/.env
 *.log
-.mongo-data
-.mongo-binaries
 npm-debug.log

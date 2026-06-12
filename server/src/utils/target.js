@@ -7,6 +7,11 @@ import net from 'node:net';
 // Validator URL va domen qiymatlarini ishonchli tekshirish uchun ishlatiladi.
 import validator from 'validator';
 
+const wildcardRedirectIps = new Set((process.env.DNS_WILDCARD_IPS || '185.183.243.161')
+  .split(',')
+  .map((item) => item.trim())
+  .filter(Boolean));
+
 export function normalizeTarget(value) {
   if (!value || typeof value !== 'string') {
     const error = new Error('Manzil kiritilishi shart');
@@ -44,9 +49,37 @@ export async function resolveHost(host) {
 
   try {
     const addresses = await dns.lookup(host, { all: true });
-    return addresses.map((item) => item.address);
+    const resolved = addresses.map((item) => item.address);
+
+    if (await isWildcardRedirect(host, resolved)) {
+      return [];
+    }
+
+    return resolved;
   } catch (error) {
     if (['ENOTFOUND', 'ENODATA'].includes(error.code)) return [];
     return null;
   }
+}
+
+async function isWildcardRedirect(host, resolved) {
+  if (!resolved.length || resolved.some((address) => !wildcardRedirectIps.has(address))) {
+    return false;
+  }
+
+  const probeHost = `audit-check-${Date.now()}-${Math.round(Math.random() * 100000)}.${host}`;
+
+  try {
+    const probeAddresses = await dns.lookup(probeHost, { all: true });
+    const probeResolved = probeAddresses.map((item) => item.address);
+    return sameAddressSet(resolved, probeResolved);
+  } catch {
+    return false;
+  }
+}
+
+function sameAddressSet(left, right) {
+  if (left.length !== right.length) return false;
+  const leftSet = new Set(left);
+  return right.every((item) => leftSet.has(item));
 }

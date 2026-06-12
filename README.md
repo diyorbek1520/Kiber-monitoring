@@ -20,10 +20,11 @@ copy server\.env.example server\.env
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/kiber_platforma
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4.1-mini
 CLIENT_URL=http://localhost:5173
+JWT_SECRET=change-this-secret-before-production
+DATA_DIR=C:\VSCODE\BMI\server\data
 ```
 
 4. `nmap` tizimga o'rnatilgan bo'lishi kerak. Port tekshiruvi haqiqiy `nmap` orqali bajariladi.
@@ -47,5 +48,7 @@ Backend: `http://localhost:5000`
 - `GET /api/tarix`
 
 Platformada oldindan yozilgan AI javoblari ishlatilmaydi. OpenAI API kaliti berilmasa, AI so'rovlari xatolik qaytaradi.
+
+Ma'lumotlar `server/data/db.json` fayliga saqlanadi.
 
 # Kiber-monitoring
