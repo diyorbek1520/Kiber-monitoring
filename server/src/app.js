@@ -22,7 +22,7 @@ export function createApp() {
   const app = express();
 
   app.use(helmet());
-  app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+  app.use(cors({ origin: getAllowedOrigins() }));
   app.use(express.json({ limit: '1mb' }));
 
   app.get('/api/salomatlik', (req, res) => {
@@ -38,4 +38,26 @@ export function createApp() {
   app.use(errorHandler);
 
   return app;
+}
+
+function getAllowedOrigins() {
+  const configured = [
+    process.env.CLIENT_URL,
+    process.env.CLIENT_URLS
+  ]
+    .filter(Boolean)
+    .flatMap((value) => value.split(','))
+    .map((value) => value.trim())
+    .filter(Boolean);
+
+  const allowed = configured.length ? configured : ['http://localhost:5173'];
+
+  return (origin, callback) => {
+    if (!origin || allowed.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error('CORS ruxsat berilmagan origin'));
+  };
 }

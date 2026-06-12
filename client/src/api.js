@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   timeout: 120000
 });
 
@@ -27,7 +27,7 @@ setStoredToken(getStoredToken());
 
 export function getErrorMessage(error) {
   if (error.code === 'ERR_NETWORK') {
-    return 'Backend server ishlamayapti. run.bat ni qayta ishga tushiring yoki serverni 5000-portda yoqing.';
+    return 'Backend server bilan aloqa yo‘q. VITE_API_URL va backend deploy manzilini tekshiring.';
   }
 
   return error.response?.data?.xabar || error.message || 'So‘rov bajarilmadi';

@@ -2,6 +2,14 @@
 
 Kichik bizneslar va startaplar uchun o'zbek tilidagi AI asosida ishlovchi kiberxavfsizlik platformasi.
 
+## Deploy
+
+- Frontend: Vercel
+- Backend: Render
+- Storage: JSON file storage (`server/data/db.json`, Renderda persistent disk bilan)
+
+Deploy bo'yicha to'liq qo'llanma: [DEPLOY.md](./DEPLOY.md)
+
 ## Ishga tushirish
 
 1. Paketlarni o'rnating:
@@ -14,6 +22,7 @@ npm install
 
 ```bash
 copy server\.env.example server\.env
+copy client\.env.example client\.env.local
 ```
 
 3. `server/.env` ichiga haqiqiy qiymatlarni kiriting:
@@ -23,8 +32,15 @@ PORT=5000
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4.1-mini
 CLIENT_URL=http://localhost:5173
+CLIENT_URLS=http://localhost:5173
 JWT_SECRET=change-this-secret-before-production
 DATA_DIR=C:\VSCODE\BMI\server\data
+```
+
+`client/.env.local`:
+
+```env
+VITE_API_URL=http://localhost:5000/api
 ```
 
 4. `nmap` tizimga o'rnatilgan bo'lishi kerak. Port tekshiruvi haqiqiy `nmap` orqali bajariladi.

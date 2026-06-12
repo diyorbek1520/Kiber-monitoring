@@ -1,123 +1,105 @@
-# Serverga Joylash
+# Vercel + Render Deploy Qo'llanmasi
 
-Bu loyiha production uchun Docker Compose orqali serverga joylanadi. Brauzerda ochiladigan asosiy manzil server IP manzili yoki domen bo'ladi.
+Bu loyiha ikki qismdan iborat:
 
-## 1. Server Talablari
+- `client` - React/Vite frontend. Vercelga deploy qilinadi.
+- `server` - Express backend API. Renderga deploy qilinadi.
 
-- Ubuntu 22.04 yoki 24.04 VPS
-- Docker va Docker Compose
-- Kamida 2 GB RAM
-- 80-port ochiq bo'lishi kerak
-- HTTPS ishlatilsa 443-port ham ochiq bo'lishi kerak
-- Domen bo'lsa DNS `A` yozuvi server IP manziliga yo'naltiriladi
+Ma'lumotlar MongoDBda emas, JSON storage orqali saqlanadi. Renderda JSON fayl saqlanib qolishi uchun persistent disk kerak.
 
-## 2. Docker O'rnatish
+## 1. GitHub Ga Push Qilish
+
+Lokal kompyuterda:
 
 ```bash
-sudo apt update
-sudo apt install -y ca-certificates curl git
-curl -fsSL https://get.docker.com | sudo sh
-sudo usermod -aG docker $USER
+git status
+git add -A
+git commit -m "Prepare Vercel and Render deployment"
+git push origin main
 ```
 
-So'ng serverdan chiqib qayta kiring.
+GitHub repository:
 
-## 3. Loyihani Serverga Yuklash
+```text
+https://github.com/diyorbek1520/Kiber-monitoring
+```
 
-Git orqali:
+## 2. Backendni Render Ga Joylash
+
+Render dashboardda:
+
+1. `New +` tugmasini bosing.
+2. `Web Service` tanlang.
+3. GitHub repositoryni ulang.
+4. Repository: `diyorbek1520/Kiber-monitoring`
+5. Runtime: `Node`
+6. Build Command:
 
 ```bash
-git clone <repo-url>
-cd <loyiha-papkasi>
+npm install && npm run build --workspace server
 ```
 
-Yoki loyiha papkasini serverga ZIP/SFTP orqali yuklang.
-
-## 4. Production Muhitini Sozlash
-
-Serverda loyiha papkasiga kiring va production `.env` faylini yarating:
+7. Start Command:
 
 ```bash
-cp server/.env.production.example server/.env.production
-nano server/.env.production
+npm run start --workspace server
 ```
 
-Minimal sozlama:
+8. Health Check Path:
+
+```text
+/api/salomatlik
+```
+
+Render `render.yaml` faylini ham o'qiy oladi. Unda backend service, start/build command, env variables va persistent disk sozlamalari yozilgan.
+
+## 3. Render Environment Variables
+
+Render backend service ichida quyidagi environment variables kiriting:
 
 ```env
-PORT=5000
+NODE_ENV=production
+PORT=10000
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4.1-mini
-CLIENT_URL=http://SERVER_IP
 JWT_SECRET=uzun-va-maxfiy-random-kalit
-DATA_DIR=/app/server/data
+DATA_DIR=/var/data
+CLIENT_URL=https://YOUR-VERCEL-APP.vercel.app
+CLIENT_URLS=https://YOUR-VERCEL-APP.vercel.app
 ```
 
-Agar domen ishlatilsa:
+Izoh:
 
-```env
-CLIENT_URL=https://sizning-domen.uz
+- `OPENAI_API_KEY` frontendga berilmaydi, faqat Render backendda bo'ladi.
+- `JWT_SECRET` kamida 32-64 belgili random maxfiy kalit bo'lishi kerak.
+- `CLIENT_URL` va `CLIENT_URLS` Vercel frontend domenini bildiradi.
+- `DATA_DIR=/var/data` Render persistent disk mount path bilan bir xil bo'lishi kerak.
+
+## 4. Render Persistent Disk
+
+JSON storage productionda saqlanib qolishi uchun Render servicega disk ulang:
+
+```yaml
+disk:
+  name: kiber-monitoring-data
+  mountPath: /var/data
+  sizeGB: 1
 ```
 
-Muhim: `JWT_SECRET` qiymatini productionda oddiy matn bilan qoldirmang. Kamida 32-64 belgili random kalit yozing.
+Muhim: Render free instance persistent disk bermasligi mumkin. Agar disk ulanmasa, qayta deploy yoki restartdan keyin JSON fayldagi foydalanuvchi, tarix va hisobotlar yo'qolishi mumkin. Doimiy saqlash uchun Render disk yoki tashqi database ishlating.
 
-## 4.1. Domenni Serverga Ulash
+## 5. Backend URL Ni Olish
 
-Domen sotib olingan bo'lsa, domen panelida DNS yozuvini qo'shing:
+Render deploy tugagach backend URL shunday bo'ladi:
 
 ```text
-Type: A
-Name: @
-Value: SERVER_IP
-TTL: Auto
+https://YOUR-BACKEND.onrender.com
 ```
 
-`www` bilan ham ochilishi kerak bo'lsa:
+Tekshirish:
 
 ```text
-Type: A
-Name: www
-Value: SERVER_IP
-TTL: Auto
-```
-
-DNS tarqalishi odatda bir necha daqiqadan bir necha soatgacha davom etadi.
-
-## 4.2. Firewall Portlarini Ochish
-
-Ubuntu serverda:
-
-```bash
-sudo ufw allow OpenSSH
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
-sudo ufw enable
-sudo ufw status
-```
-
-## 5. Tizimni Ishga Tushirish
-
-```bash
-docker compose up -d --build
-```
-
-Bu buyruq 2 ta servisni ishga tushiradi:
-
-- `server` - Express backend API
-- `client` - Nginx orqali React frontend
-
-## 6. Tekshirish
-
-Servislar holati:
-
-```bash
-docker compose ps
-```
-
-Backend ishlayotganini tekshirish:
-
-```bash
-curl http://127.0.0.1/api/salomatlik
+https://YOUR-BACKEND.onrender.com/api/salomatlik
 ```
 
 Javob:
@@ -126,73 +108,128 @@ Javob:
 {"holat":"ishlayapti"}
 ```
 
-Loglarni ko'rish:
+## 6. Frontendni Vercel Ga Joylash
+
+Vercel dashboardda:
+
+1. `Add New Project` bosing.
+2. GitHub repositoryni tanlang.
+3. Repository: `diyorbek1520/Kiber-monitoring`
+4. Framework Preset: `Vite`
+5. Root Directory: repository root qolsin.
+6. Build Command:
 
 ```bash
-docker compose logs -f server
-docker compose logs -f client
+npm run build --workspace client
 ```
 
-## 7. Brauzerda Ochish
-
-Server IP orqali:
+7. Output Directory:
 
 ```text
-http://SERVER_IP
+client/dist
 ```
 
-Domen orqali:
+Bu qiymatlar `vercel.json` ichida ham yozilgan.
+
+## 7. Vercel Environment Variables
+
+Vercel project settings ichida quyidagini kiriting:
+
+```env
+VITE_API_URL=https://YOUR-BACKEND.onrender.com/api
+```
+
+Muhim: Vite frontend browserda ishlatadigan env variable nomlari `VITE_` bilan boshlanishi kerak. Shuning uchun backend URL `VITE_API_URL` orqali beriladi.
+
+## 8. Frontend Va Backendni Ulash
+
+1. Avval backendni Renderga deploy qiling.
+2. Render backend URLni oling.
+3. Vercelda `VITE_API_URL`ga backend URL + `/api` yozing:
+
+```env
+VITE_API_URL=https://YOUR-BACKEND.onrender.com/api
+```
+
+4. Vercel frontend deploy qiling.
+5. Vercel domenini oling:
 
 ```text
-https://sizning-domen.uz
+https://YOUR-VERCEL-APP.vercel.app
 ```
 
-Frontend ichida API manzili `/api` qilib build qilinadi. Nginx `/api` so'rovlarini backenddagi `server:5000` servisiga yuboradi.
+6. Renderda `CLIENT_URL` va `CLIENT_URLS`ni shu Vercel domeniga tenglang.
+7. Render backendni redeploy qiling.
 
-## 7.1. Qidiruv Tizimlarida Chiqishi
+## 9. Local Development
 
-Brauzerda sayt ochilishi uchun server IP yoki domen kifoya. Google/Yandex qidiruvida chiqishi uchun qo'shimcha ravishda:
-
-- Domen public bo'lishi kerak
-- Sayt 80 yoki 443-port orqali ochilishi kerak
-- `client/index.html` ichida title, description va `robots` meta teglari bo'lishi kerak
-- `client/public/robots.txt` qidiruv botlariga saytni ko'rishga ruxsat beradi
-- Domenni Google Search Console yoki Yandex Webmasterga qo'shish tavsiya etiladi
-
-Qidiruv natijalarida chiqish darhol bo'lmaydi; indekslash bir necha kun vaqt olishi mumkin.
-
-## 8. Ma'lumotlar Saqlanishi
-
-Foydalanuvchilar, tarix, tahlil natijalari va hisobotlar JSON faylda saqlanadi:
-
-```text
-server/data/db.json
-```
-
-Docker productionda bu papka alohida volume ichida saqlanadi:
-
-```text
-server_data
-```
-
-Shu sababli brauzer yopilganda, server qayta ishga tushganda yoki konteyner restart bo'lganda foydalanuvchilar, tarix, hisobotlar va tahlil natijalari saqlanib qoladi.
-
-## 9. Yangilash
-
-Kod yangilangandan keyin:
+Frontend env:
 
 ```bash
-docker compose down
-docker compose up -d --build
+copy client\.env.example client\.env.local
 ```
 
-Ma'lumotlarni o'chirmoqchi bo'lmasangiz `docker compose down -v` ishlatmang.
+`client/.env.local`:
 
-## 10. Asosiy Fayllar
+```env
+VITE_API_URL=http://localhost:5000/api
+```
 
-- `docker-compose.yml` - production servislar
-- `client/Dockerfile` - React build va Nginx
-- `client/nginx.conf` - frontend va `/api` proxy
-- `server/Dockerfile` - backend container
-- `server/.env.production` - production maxfiy sozlamalar
-- `server/.env.production.example` - production sozlama namunasi
+Backend env:
+
+```bash
+copy server\.env.example server\.env
+```
+
+`server/.env`:
+
+```env
+PORT=5000
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-4.1-mini
+CLIENT_URL=http://localhost:5173
+CLIENT_URLS=http://localhost:5173
+JWT_SECRET=change-this-secret-before-production
+DATA_DIR=C:\VSCODE\BMI\server\data
+```
+
+Ishga tushirish:
+
+```bash
+npm install
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+Backend:
+
+```text
+http://localhost:5000
+```
+
+## 10. MongoDB Atlas Haqida
+
+MongoDB bu loyihadan olib tashlangan. Hozir backend `server/data/db.json` yoki Renderda `/var/data/db.json` fayli bilan ishlaydi.
+
+Agar keyinchalik MongoDB Atlas Free ishlatmoqchi bo'lsangiz, alohida:
+
+- `mongoose` yoki MongoDB driver o'rnatiladi
+- `MONGODB_URI` env variable qo'shiladi
+- `User` va `Analysis` modellari MongoDBga qaytariladi
+
+Hozirgi deploy rejasi MongoDBsiz, JSON storage bilan ishlaydi.
+
+## 11. Deployga Halaqit Beradigan Avvalgi Muammolar Va Tuzatishlar
+
+- Frontenddagi hardcoded `localhost` API URL olib tashlandi, endi `VITE_API_URL` ishlatiladi.
+- Backend CORS faqat env orqali berilgan frontend domenlardan so'rov qabul qiladi.
+- Backend maxfiy kalitlar `.env` orqali ishlaydi.
+- Render uchun `build` va `start` script qo'shildi.
+- Vercel uchun `vercel.json` qo'shildi.
+- JSON storage uchun Render persistent disk sozlandi.
+- MongoDB dependencylari olib tashlangan, shuning uchun MongoDB Atlas majburiy emas.
